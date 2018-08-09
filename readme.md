@@ -1,4 +1,4 @@
-Teste Backend Alpes One
+# Web Crawler
 
 ## Proposta
 
@@ -10,8 +10,8 @@ Os endpoints propostos devem:
 
 ## Especificações
 
--Feito em PHP 7.1.3
--Laravel 5.6
+- PHP ^7.1.3
+- Laravel 5.6
 
 ## Como testar
 
@@ -22,16 +22,17 @@ Os endpoints propostos devem:
 
 ## Rotas
 
-[GET] api/comprar/{marca}/{modelo}/{anos}/{codigo}
+### [GET] api/comprar/{marca}/{modelo}/{anos}/{codigo}
 Rota utilizada para buscar os detalhes de um anúncio específico.
 
--Entrada
-marca: string
-modelo: string
-anos: string(9) "YYYY-YYYY"
-codigo: int
+#### Entrada
+- marca: string
+- modelo: string
+- anos: string(9) "YYYY-YYYY"
+- codigo: int
 
--Saída
+#### Saída
+<pre>
 Json: {
     "imagens": [string],
     "detalhes": [string],
@@ -39,27 +40,28 @@ Json: {
     "observacoes": string,
     "informacoes": [string]
 }
+</pre>
 
 
-[POST] api/pesquisar
+### [POST] api/pesquisar
 Rota utilizada para buscar a lista de anúncios que correspondem aos parâmetros fornecidos
 
--Entrada
-veiculo: "carro" || "moto" || "caminhao" (*)
-estado_conservacao: "0km" || "seminovo"
-marca: string (*)
-modelo: string (*)
-cidade: int
-valor1: int
-valor2: int
-ano1: int
-ano2: int
-usuario: "particular" || "revenda"
-pagina: int  
-
+#### Entrada
+- veiculo: "carro" || "moto" || "caminhao" (*)
+- estado_conservacao: "0km" || "seminovo"
+- marca: string (*)
+- modelo: string (*)
+- cidade: int
+- valor1: int
+- valor2: int
+- ano1: int
+- ano2: int
+- usuario: "particular" || "revenda"
+- pagina: int\
 (*) Campos obrigatórios
 
--Saída
+#### Saída
+<pre>
 Json: {
     {
         "totalpaginas": string
@@ -69,6 +71,7 @@ Json: {
         "titulo": string
     }...
 }
+</pre>
 
 ## Agradecimentos
 À equipe Alpes One pela oportunidade e pelo desafio, foi no mínimo interessante realizá-lo.
